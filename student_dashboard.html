@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Dashboard - Nayi Raah</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/tailwind.css" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fnayiraah8247back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background min-h-screen">
+    <!-- Header Navigation -->
+    <header class="bg-surface shadow-custom border-b border-border sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <svg class="h-8 w-8 text-primary mr-3" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                    <h1 class="text-xl font-heading font-semibold text-primary">Nayi Raah</h1>
+                </div>
+                
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="student_dashboard.html" class="text-primary font-medium border-b-2 border-primary pb-1">Dashboard</a>
+                    <a href="aptitude_assessment_quiz.html" class="text-text-secondary hover:text-primary transition-custom">Assessment</a>
+                    <a href="career_roadmap_generator.html" class="text-text-secondary hover:text-primary transition-custom">Roadmap</a>
+                    <a href="ai_guidance_chat.html" class="text-text-secondary hover:text-primary transition-custom">AI Guidance</a>
+                </nav>
+
+                <!-- User Profile -->
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <button class="p-2 text-text-secondary hover:text-primary transition-custom">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5-5-5h5v-6h5v6z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Student Profile" class="w-8 h-8 rounded-full object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <span class="text-sm font-medium text-text-primary hidden sm:block">Arjun Sharma</span>
+                        <button class="text-text-secondary hover:text-primary transition-custom">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 rounded-md text-text-secondary hover:text-primary hover:bg-primary-50 transition-custom">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Welcome Section -->
+        <div class="mb-8">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                    <h2 class="text-3xl font-heading font-bold text-text-primary mb-2">Welcome back, Arjun!</h2>
+                    <p class="text-text-secondary">Continue your educational journey with personalized guidance</p>
+                </div>
+                <div class="mt-4 sm:mt-0 text-sm text-text-secondary">
+                    Last updated: September 28, 2025
+                </div>
+            </div>
+        </div>
+
+        <!-- Alert Notifications -->
+        <div class="mb-8 space-y-4">
+            <div class="card p-4 border-l-4 border-warning bg-warning-50">
+                <div class="flex items-start space-x-3">
+                    <svg class="w-5 h-5 text-warning mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                    </svg>
+                    <div class="flex-1">
+                        <h4 class="font-medium text-warning-800">Admission Deadline Approaching</h4>
+                        <p class="text-warning-700 text-sm mt-1">Kashmir University applications close in 15 days. Complete your profile to apply.</p>
+                        <button class="text-warning-600 hover:text-warning-800 text-sm font-medium mt-2 underline">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card p-4 border-l-4 border-success bg-success-50">
+                <div class="flex items-start space-x-3">
+                    <svg class="w-5 h-5 text-success mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <div class="flex-1">
+                        <h4 class="font-medium text-success-800">New Scholarship Available</h4>
+                        <p class="text-success-700 text-sm mt-1">J&K Merit Scholarship for Science stream students. Apply before October 15, 2025.</p>
+                        <button class="text-success-600 hover:text-success-800 text-sm font-medium mt-2 underline">Apply Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Metrics Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="card p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-text-secondary text-sm font-medium">Profile Completion</p>
+                        <p class="text-2xl font-bold text-text-primary">85%</p>
+                    </div>
+                    <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-text-secondary text-sm font-medium">Assessments Taken</p>
+                        <p class="text-2xl font-bold text-text-primary">3/5</p>
+                    </div>
+                    <div class="w-12 h-12 bg-secondary-100 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 60%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-text-secondary text-sm font-medium">Applications</p>
+                        <p class="text-2xl font-bold text-text-primary">2</p>
+                    </div>
+                    <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="mt-4 text-sm text-text-secondary">
+                    <span class="text-success font-medium">1 Accepted</span> • <span class="text-warning font-medium">1 Pending</span>
+                </div>
+            </div>
+
+            <div class="card p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-text-secondary text-sm font-medium">Stream Status</p>
+                        <p class="text-lg font-bold text-success">Science</p>
+                    </div>
+                    <div class="w-12 h-12 bg-success-100 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="mt-4 text-sm text-text-secondary">
+                    Selected based on assessment
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Dashboard Grid -->
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Left Column - Recommendations & Progress -->
+            <div class="lg:col-span-2 space-y-8">
+                <!-- AI Recommendations -->
+                <section>
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-heading font-semibold text-text-primary">AI Recommendations</h3>
+                        <button class="text-primary hover:text-primary-700 text-sm font-medium">View All</button>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="card p-6 border-l-4 border-primary">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                                    </svg>
+                                </div>
+                                <span class="bg-primary-100 text-primary text-xs px-2 py-1 rounded-full font-medium">High Match</span>
+                            </div>
+                            <h4 class="font-heading font-semibold text-text-primary mb-2">NIT Srinagar</h4>
+                            <p class="text-text-secondary text-sm mb-4">Computer Science Engineering - Based on your aptitude scores and interests in technology.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-success text-sm font-medium">95% Match</span>
+                                <button class="text-primary hover:text-primary-700 text-sm font-medium">Learn More</button>
+                            </div>
+                        </div>
+
+                        <div class="card p-6 border-l-4 border-secondary">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="w-12 h-12 bg-secondary-100 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                                    </svg>
+                                </div>
+                                <span class="bg-secondary-100 text-secondary text-xs px-2 py-1 rounded-full font-medium">Good Match</span>
+                            </div>
+                            <h4 class="font-heading font-semibold text-text-primary mb-2">Kashmir University</h4>
+                            <p class="text-text-secondary text-sm mb-4">B.Sc Physics - Aligns with your science aptitude and local preference for government colleges.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-success text-sm font-medium">88% Match</span>
+                                <button class="text-secondary hover:text-secondary-700 text-sm font-medium">Learn More</button>
+                            </div>
+                        </div>
+
+                        <div class="card p-6 border-l-4 border-accent">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2V6"/>
+                                    </svg>
+                                </div>
+                                <span class="bg-accent-100 text-accent text-xs px-2 py-1 rounded-full font-medium">Scholarship</span>
+                            </div>
+                            <h4 class="font-heading font-semibold text-text-primary mb-2">IIIT Jammu</h4>
+                            <p class="text-text-secondary text-sm mb-4">Information Technology - Merit scholarship available for J&K students with 85%+ marks.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-success text-sm font-medium">82% Match</span>
+                                <button class="text-accent hover:text-accent-700 text-sm font-medium">Apply Now</button>
+                            </div>
+                        </div>
+
+                        <div class="card p-6 border-l-4 border-success">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="w-12 h-12 bg-success-100 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    </svg>
+                                </div>
+                                <span class="bg-success-100 text-success text-xs px-2 py-1 rounded-full font-medium">Nearby</span>
+                            </div>
+                            <h4 class="font-heading font-semibold text-text-primary mb-2">Govt. College Srinagar</h4>
+                            <p class="text-text-secondary text-sm mb-4">B.Sc Mathematics - Only 5km from your location with excellent faculty and infrastructure.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-success text-sm font-medium">78% Match</span>
+                                <button class="text-success hover:text-success-700 text-sm font-medium">Visit Campus</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Progress Tracking -->
+                <section>
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-heading font-semibold text-text-primary">Your Progress</h3>
+                        <a href="career_roadmap_generator.html" class="text-primary hover:text-primary-700 text-sm font-medium">View Roadmap</a>
+                    </div>
+                    
+                    <div class="card p-6">
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-8 h-8 bg-success rounded-full flex items-center justify-center">
+                                        <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-medium text-text-primary">Complete Profile Setup</h4>
+                                    <p class="text-text-secondary text-sm">Added personal details and academic information</p>
+                                </div>
+                                <span class="text-success text-sm font-medium">Completed</span>
+                            </div>
+
+                            <div class="flex items-center space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-8 h-8 bg-success rounded-full flex items-center justify-center">
+                                        <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-medium text-text-primary">Take Aptitude Assessment</h4>
+                                    <p class="text-text-secondary text-sm">Completed science and mathematics assessment</p>
+                                </div>
+                                <span class="text-success text-sm font-medium">Completed</span>
+                            </div>
+
+                            <div class="flex items-center space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                                        <div class="w-2 h-2 bg-white rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-medium text-text-primary">Explore Career Options</h4>
+                                    <p class="text-text-secondary text-sm">Review AI recommendations and shortlist colleges</p>
+                                </div>
+                                <span class="text-primary text-sm font-medium">In Progress</span>
+                            </div>
+
+                            <div class="flex items-center space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-8 h-8 bg-border rounded-full flex items-center justify-center">
+                                        <div class="w-2 h-2 bg-text-secondary rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-medium text-text-secondary">Submit Applications</h4>
+                                    <p class="text-text-secondary text-sm">Apply to selected colleges and programs</p>
+                                </div>
+                                <span class="text-text-secondary text-sm">Pending</span>
+                            </div>
+
+                            <div class="flex items-center space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-8 h-8 bg-border rounded-full flex items-center justify-center">
+                                        <div class="w-2 h-2 bg-text-secondary rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-medium text-text-secondary">Track Admissions</h4>
+                                    <p class="text-text-secondary text-sm">Monitor application status and prepare for interviews</p>
+                                </div>
+                                <span class="text-text-secondary text-sm">Pending</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column - Quick Actions & Upcoming -->
+            <div class="space-y-8">
+                <!-- Quick Actions -->
+                <section>
+                    <h3 class="text-xl font-heading font-semibold text-text-primary mb-6">Quick Actions</h3>
+                    <div class="space-y-4">
+                        <a href="aptitude_assessment_quiz.html" class="card p-4 block hover:shadow-custom-md transition-custom">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-medium text-text-primary">Take Assessment</h4>
+                                    <p class="text-text-secondary text-sm">Complete remaining aptitude tests</p>
+                                </div>
+                                <svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </div>
+                        </a>
+
+                        <a href="career_roadmap_generator.html" class="card p-4 block hover:shadow-custom-md transition-custom">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-secondary-100 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-medium text-text-primary">Generate Roadmap</h4>
+                                    <p class="text-text-secondary text-sm">Create your career pathway</p>
+                                </div>
+                                <svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </div>
+                        </a>
+
+                        <a href="ai_guidance_chat.html" class="card p-4 block hover:shadow-custom-md transition-custom">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-medium text-text-primary">AI Guidance</h4>
+                                    <p class="text-text-secondary text-sm">Chat with career counselor</p>
+                                </div>
+                                <svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </div>
+                        </a>
+
+                        <button class="card p-4 w-full text-left hover:shadow-custom-md transition-custom">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-success-100 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-medium text-text-primary">Find Colleges</h4>
+                                    <p class="text-text-secondary text-sm">Explore nearby institutions</p>
+                                </div>
+                                <svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Upcoming Deadlines -->
+                <section>
+                    <h3 class="text-xl font-heading font-semibold text-text-primary mb-6">Upcoming Deadlines</h3>
+                    <div class="space-y-4">
+                        <div class="card p-4 border-l-4 border-error">
+                            <div class="flex items-start justify-between">
+                                <div class="flex-1">
+                                    <h4 class="font-medium text-text-primary">Kashmir University</h4>
+                                    <p class="text-text-secondary text-sm">B.Sc Application Deadline</p>
+                                    <div class="flex items-center space-x-2 mt-2">
+                                        <svg class="w-4 h-4 text-error" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        </svg>
+                                        <span class="text-error text-sm font-medium">15 days left</span>
+                                    </div>
+                                </div>
+                                <button class="text-error hover:text-error-600 text-sm font-medium">Apply</button>
+                            </div>
+                        </div>
+
+                        <div class="card p-4 border-l-4 border-warning">
+                            <div class="flex items-start justify-between">
+                                <div class="flex-1">
+                                    <h4 class="font-medium text-text-primary">Merit Scholarship</h4>
+                                    <p class="text-text-secondary text-sm">J&K Government Scholarship</p>
+                                    <div class="flex items-center space-x-2 mt-2">
+                                        <svg class="w-4 h-4 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        </svg>
+                                        <span class="text-warning text-sm font-medium">28 days left</span>
+                                    </div>
+                                </div>
+                                <button class="text-warning hover:text-warning-600 text-sm font-medium">Apply</button>
+                            </div>
+                        </div>
+
+                        <div class="card p-4 border-l-4 border-primary">
+                            <div class="flex items-start justify-between">
+                                <div class="flex-1">
+                                    <h4 class="font-medium text-text-primary">NIT Srinagar</h4>
+                                    <p class="text-text-secondary text-sm">JEE Main Registration</p>
+                                    <div class="flex items-center space-x-2 mt-2">
+                                        <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        </svg>
+                                        <span class="text-primary text-sm font-medium">45 days left</span>
+                                    </div>
+                                </div>
+                                <button class="text-primary hover:text-primary-700 text-sm font-medium">Register</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Recent Activity -->
+                <section>
+                    <h3 class="text-xl font-heading font-semibold text-text-primary mb-6">Recent Activity</h3>
+                    <div class="card p-6">
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-2 h-2 bg-success rounded-full mt-2"></div>
+                                <div class="flex-1">
+                                    <p class="text-text-primary text-sm">Completed Science Aptitude Assessment</p>
+                                    <p class="text-text-secondary text-xs">2 hours ago</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="w-2 h-2 bg-primary rounded-full mt-2"></div>
+                                <div class="flex-1">
+                                    <p class="text-text-primary text-sm">Updated profile with Class 12 marks</p>
+                                    <p class="text-text-secondary text-xs">1 day ago</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="w-2 h-2 bg-secondary rounded-full mt-2"></div>
+                                <div class="flex-1">
+                                    <p class="text-text-primary text-sm">Viewed NIT Srinagar college details</p>
+                                    <p class="text-text-secondary text-xs">2 days ago</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="w-2 h-2 bg-accent rounded-full mt-2"></div>
+                                <div class="flex-1">
+                                    <p class="text-text-primary text-sm">Generated career roadmap for Engineering</p>
+                                    <p class="text-text-secondary text-xs">3 days ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- AI Chat Widget -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button id="aiChatToggle" class="w-14 h-14 bg-primary rounded-full shadow-custom-lg flex items-center justify-center text-white hover:bg-primary-700 transition-custom">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+            </svg>
+        </button>
+        
+        <!-- Chat Widget Panel (Hidden by default) -->
+        <div id="aiChatPanel" class="absolute bottom-16 right-0 w-80 bg-surface rounded-lg shadow-custom-xl border border-border hidden">
+            <div class="p-4 border-b border-border">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
+                            <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-text-primary">AI Career Guide</h4>
+                            <p class="text-xs text-success">Online</p>
+                        </div>
+                    </div>
+                    <button id="closeChatPanel" class="text-text-secondary hover:text-text-primary">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="p-4 h-64 overflow-y-auto">
+                <div class="space-y-3">
+                    <div class="flex items-start space-x-2">
+                        <div class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-3 h-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                            </svg>
+                        </div>
+                        <div class="bg-primary-50 rounded-lg p-3 flex-1">
+                            <p class="text-sm text-text-primary">Hi Arjun! I see you've completed your science assessment. Would you like me to explain your career options in detail?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-4 border-t border-border">
+                <div class="flex space-x-2">
+                    <input type="text" placeholder="Ask me anything..." class="input-field text-sm py-2" />
+                    <button class="btn-primary px-4 py-2 text-sm">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-surface border-t border-border mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center text-text-secondary">
+                <p>&copy; 2025 Nayi Raah. All Rights Reserved. Empowering students across Jammu & Kashmir.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactive Elements -->
+    <script>
+        // AI Chat Widget Toggle
+        const aiChatToggle = document.getElementById('aiChatToggle');
+        const aiChatPanel = document.getElementById('aiChatPanel');
+        const closeChatPanel = document.getElementById('closeChatPanel');
+
+        aiChatToggle.addEventListener('click', () => {
+            aiChatPanel.classList.toggle('hidden');
+        });
+
+        closeChatPanel.addEventListener('click', () => {
+            aiChatPanel.classList.add('hidden');
+        });
+
+        // Close chat panel when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!aiChatToggle.contains(e.target) && !aiChatPanel.contains(e.target)) {
+                aiChatPanel.classList.add('hidden');
+            }
+        });
+
+        // Simulate real-time updates
+        function updateLastUpdated() {
+            const now = new Date();
+            const timeString = now.toLocaleString('en-IN', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+            
+            const lastUpdatedElement = document.querySelector('main .text-text-secondary');
+            if (lastUpdatedElement && lastUpdatedElement.textContent.includes('Last updated:')) {
+                lastUpdatedElement.textContent = `Last updated: ${timeString}`;
+            }
+        }
+
+        // Update timestamp every minute
+        setInterval(updateLastUpdated, 60000);
+
+        // Add hover effects to recommendation cards
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-2px)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Simulate progress updates
+        function animateProgress() {
+            const progressBars = document.querySelectorAll('.progress-fill');
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        }
+
+        // Animate progress bars on page load
+        window.addEventListener('load', () => {
+            setTimeout(animateProgress, 500);
+        });
+
+        // Add notification badge animation
+        function addNotificationBadge() {
+            const notificationButton = document.querySelector('header button svg');
+            if (notificationButton) {
+                const badge = document.createElement('div');
+                badge.className = 'absolute -top-1 -right-1 w-3 h-3 bg-error rounded-full animate-pulse';
+                notificationButton.parentElement.classList.add('relative');
+                notificationButton.parentElement.appendChild(badge);
+            }
+        }
+
+        // Add notification badge after 3 seconds
+        setTimeout(addNotificationBadge, 3000);
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

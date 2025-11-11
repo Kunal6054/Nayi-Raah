@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Career Roadmap Generator - Nayi Raah</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/tailwind.css" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fnayiraah8247back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background min-h-screen">
+    <!-- Header Navigation -->
+    <header class="bg-surface shadow-custom border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <svg class="h-8 w-8 text-primary mr-3" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                    <h1 class="text-xl font-heading font-semibold text-primary">Nayi Raah</h1>
+                </div>
+                
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="student_login.html" class="text-text-secondary hover:text-primary transition-custom">Login</a>
+                    <a href="student_dashboard.html" class="text-text-secondary hover:text-primary transition-custom">Dashboard</a>
+                    <a href="aptitude_assessment_quiz.html" class="text-text-secondary hover:text-primary transition-custom">Assessment</a>
+                    <a href="career_roadmap_generator.html" class="text-primary font-medium">Roadmap</a>
+                    <a href="ai_guidance_chat.html" class="text-text-secondary hover:text-primary transition-custom">AI Guidance</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 rounded-md text-text-secondary hover:text-primary hover:bg-primary-50 transition-custom">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            
+            <!-- Page Header -->
+            <div class="mb-8">
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                    <div>
+                        <h1 class="text-3xl font-heading font-bold text-text-primary mb-2">Career Roadmap Generator</h1>
+                        <p class="text-text-secondary">Create your personalized academic and career pathway with AI-powered recommendations</p>
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap gap-3">
+                        <button id="generateRoadmapBtn" class="btn-primary flex items-center space-x-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                            <span>Generate Roadmap</span>
+                        </button>
+                        <button id="exportPdfBtn" class="px-4 py-2 border border-border text-text-secondary rounded-lg hover:bg-gray-50 transition-custom flex items-center space-x-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                            <span>Export PDF</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-4 gap-8">
+                
+                <!-- Sidebar Controls -->
+                <div class="lg:col-span-1">
+                    <div class="sticky top-8 space-y-6">
+                        
+                        <!-- Student Profile Card -->
+                        <div class="card p-6">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-heading font-semibold text-text-primary">Arjun Sharma</h3>
+                                    <p class="text-sm text-text-secondary">Class 12 - Science Stream</p>
+                                </div>
+                            </div>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-text-secondary">District:</span>
+                                    <span class="text-text-primary">Srinagar</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-text-secondary">Interest:</span>
+                                    <span class="text-text-primary">Engineering</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-text-secondary">Goal:</span>
+                                    <span class="text-text-primary">B.Tech CSE</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- View Options -->
+                        <div class="card p-6">
+                            <h3 class="font-heading font-semibold text-text-primary mb-4">View Options</h3>
+                            <div class="space-y-3">
+                                <label class="flex items-center space-x-3 cursor-pointer">
+                                    <input type="radio" name="viewType" value="timeline" class="text-primary focus:ring-primary" checked />
+                                    <span class="text-sm text-text-primary">Timeline View</span>
+                                </label>
+                                <label class="flex items-center space-x-3 cursor-pointer">
+                                    <input type="radio" name="viewType" value="checklist" class="text-primary focus:ring-primary" />
+                                    <span class="text-sm text-text-primary">Checklist View</span>
+                                </label>
+                                <label class="flex items-center space-x-3 cursor-pointer">
+                                    <input type="radio" name="viewType" value="calendar" class="text-primary focus:ring-primary" />
+                                    <span class="text-sm text-text-primary">Calendar View</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Customization Options -->
+                        <div class="card p-6">
+                            <h3 class="font-heading font-semibold text-text-primary mb-4">Customize Roadmap</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-text-primary mb-2">Timeline Duration</label>
+                                    <select class="input-field text-sm">
+                                        <option value="2">2 Years</option>
+                                        <option value="4" selected>4 Years</option>
+                                        <option value="6">6 Years</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-text-primary mb-2">Focus Area</label>
+                                    <select class="input-field text-sm">
+                                        <option value="academic">Academic Excellence</option>
+                                        <option value="skills">Skill Development</option>
+                                        <option value="balanced" selected>Balanced Approach</option>
+                                    </select>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <input type="checkbox" id="includeAlternatives" class="rounded border-border text-primary focus:ring-primary" />
+                                    <label for="includeAlternatives" class="text-sm text-text-primary">Include Alternative Paths</label>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <input type="checkbox" id="enableNotifications" class="rounded border-border text-primary focus:ring-primary" checked />
+                                    <label for="enableNotifications" class="text-sm text-text-primary">Enable Notifications</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Progress Overview -->
+                        <div class="card p-6">
+                            <h3 class="font-heading font-semibold text-text-primary mb-4">Progress Overview</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex justify-between text-sm mb-2">
+                                        <span class="text-text-secondary">Overall Progress</span>
+                                        <span class="text-text-primary font-medium">35%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 35%"></div>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-3 text-center">
+                                    <div class="bg-success-50 rounded-lg p-3">
+                                        <div class="text-lg font-bold text-success">8</div>
+                                        <div class="text-xs text-text-secondary">Completed</div>
+                                    </div>
+                                    <div class="bg-warning-50 rounded-lg p-3">
+                                        <div class="text-lg font-bold text-warning">15</div>
+                                        <div class="text-xs text-text-secondary">Remaining</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Roadmap Content -->
+                <div class="lg:col-span-3">
+                    
+                    <!-- Timeline View -->
+                    <div id="timelineView" class="roadmap-view">
+                        <div class="card p-8">
+                            <div class="flex items-center justify-between mb-8">
+                                <h2 class="text-2xl font-heading font-bold text-text-primary">Your Career Roadmap</h2>
+                                <div class="flex items-center space-x-2 text-sm text-text-secondary">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span>Last updated: September 28, 2025</span>
+                                </div>
+                            </div>
+
+                            <!-- Timeline Container -->
+                            <div class="relative">
+                                <!-- Timeline Line -->
+                                <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-border"></div>
+                                
+                                <!-- Timeline Items -->
+                                <div class="space-y-8">
+                                    
+                                    <!-- Current Phase -->
+                                    <div class="relative flex items-start space-x-6">
+                                        <div class="flex-shrink-0 w-16 h-16 bg-primary rounded-full flex items-center justify-center relative z-10">
+                                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                                            </svg>
+                                        </div>
+                                        <div class="flex-1 min-w-0">
+                                            <div class="card p-6 border-l-4 border-primary">
+                                                <div class="flex items-center justify-between mb-3">
+                                                    <h3 class="text-lg font-heading font-semibold text-text-primary">Class 12 Board Preparation</h3>
+                                                    <span class="px-3 py-1 bg-primary-100 text-primary text-sm rounded-full">Current Phase</span>
+                                                </div>
+                                                <p class="text-text-secondary mb-4">Focus on board exam preparation and entrance exam studies for engineering colleges.</p>
+                                                
+                                                <!-- Action Items -->
+                                                <div class="space-y-3 mb-4">
+                                                    <div class="flex items-center space-x-3">
+                                                        <input type="checkbox" class="rounded border-border text-primary focus:ring-primary" checked />
+                                                        <span class="text-sm text-text-primary line-through">Complete Physics syllabus revision</span>
+                                                    </div>
+                                                    <div class="flex items-center space-x-3">
+                                                        <input type="checkbox" class="rounded border-border text-primary focus:ring-primary" checked />
+                                                        <span class="text-sm text-text-primary line-through">Mathematics practice tests</span>
+                                                    </div>
+                                                    <div class="flex items-center space-x-3">
+                                                        <input type="checkbox" class="rounded border-border text-primary focus:ring-primary" />
+                                                        <span class="text-sm text-text-primary">JEE Main preparation</span>
+                                                    </div>
+                                                    <div class="flex items-center space-x-3">
+                                                        <input type="checkbox" class="rounded border-border text-primary focus:ring-primary" />
+                                                        <span class="text-sm text-text-primary">Apply for JEE Advanced</span>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- Timeline and Resources -->
+                                                <div class="flex flex-wrap items-center gap-4 text-sm">
+                                                    <div class="flex items-center space-x-2 text-text-secondary">
+                                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                                        </svg>
+                                                        <span>Oct 2025 - Mar 2026</span>
+                                                    </div>
+                                                    <a href="javascript:void(0)" class="text-primary hover:underline">Study Resources</a>
+                                                    <a href="javascript:void(0)" class="text-primary hover:underline">Practice Tests</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Upcoming Phase -->
+                                    <div class="relative flex items-start space-x-6">
+                                        <div class="flex-shrink-0 w-16 h-16 bg-secondary rounded-full flex items-center justify-center relative z-10">
+                                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                                            </svg>
+                                        </div>
+                                        <div class="flex-1 min-w-0">
+                                            <div class="card p-6 border-l-4 border-secondary">
+                                                <div class="flex items-center justify-between mb-3">
+                                                    <h3 class="text-lg font-heading font-semibold text-text-primary">College Admission Process</h3>
+                                                    <span class="px-3 py-1 bg-secondary-100 text-secondary text-sm rounded-full">Upcoming</span>
+                                                </div>
+                                                <p class="text-text-secondary mb-4">Apply to engineering colleges based on entrance exam results and preferences.</p>
+                                                
+                                                <!-- Action Items -->
+                                                <div class="space-y-3 mb-4">
+                                                    <div class="flex items-center space-x-3">
+                                                        <input type="checkbox" class="rounded border-border text-primary focus:ring-primary" />
+                                                        <span class="text-sm text-text-primary">Research top engineering colleges in J&K</span>
+                                                    </div>
+                                                    <div class="flex items-center space-x-3">
+                                                        <input type="checkbox" class="rounded border-border text-primary focus:ring-primary" />
+                                                        <span class="text-sm text-text-primary">Prepare application documents</span>
+                                                    </div>
+                                                    <div class="flex items-center space-x-3">
+                                                        <input type="checkbox" class="rounded border-border text-primary focus:ring-primary" />
+                                                        <span class="text-sm text-text-primary">Apply for counseling process</span>
+                                                    </div>
+                                                    <div class="flex items-center space-x-3">
+                                                        <input type="checkbox" class="rounded border-border text-primary focus:ring-primary" />
+                                                        <span class="text-sm text-text-primary">Attend college interviews</span>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="flex flex-wrap items-center gap-4 text-sm">
+                                                    <div class="flex items-center space-x-2 text-text-secondary">
+                                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                                        </svg>
+                                                        <span>Apr 2026 - Jul 2026</span>
+                                                    </div>
+                                                    <a href="javascript:void(0)" class="text-secondary hover:underline">College List</a>
+                                                    <a href="javascript:void(0)" class="text-secondary hover:underline">Application Guide</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Future Phase -->
+                                    <div class="relative flex items-start space-x-6">
+                                        <div class="flex-shrink-0 w-16 h-16 bg-accent rounded-full flex items-center justify-center relative z-10">
+                                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="flex-1 min-w-0">
+                                            <div class="card p-6 border-l-4 border-accent">
+                                                <div class="flex items-center justify-between mb-3">
+                                                    <h3 class="text-lg font-heading font-semibold text-text-primary">B.Tech Computer Science</h3>
+                                                    <span class="px-3 py-1 bg-accent-100 text-accent text-sm rounded-full">Future Goal</span>
+                                                </div>
+                                                <p class="text-text-secondary mb-4">Begin your engineering journey with focus on computer science fundamentals and practical skills.</p>
+                                                
+                                                <!-- Action Items -->
+                                                <div class="space-y-3 mb-4">
+                                                    <div class="flex items-center space-x-3">
+                                                        <input type="checkbox" class="rounded border-border text-primary focus:ring-primary" />
+                                                        <span class="text-sm text-text-primary">Master programming fundamentals</span>
+                                                    </div>
+                                                    <div class="flex items-center space-x-3">
+                                                        <input type="checkbox" class="rounded border-border text-primary focus:ring-primary" />
+                                                        <span class="text-sm text-text-primary">Participate in coding competitions</span>
+                                                    </div>
+                                                    <div class="flex items-center space-x-3">
+                                                        <input type="checkbox" class="rounded border-border text-primary focus:ring-primary" />
+                                                        <span class="text-sm text-text-primary">Build portfolio projects</span>
+                                                    </div>
+                                                    <div class="flex items-center space-x-3">
+                                                        <input type="checkbox" class="rounded border-border text-primary focus:ring-primary" />
+                                                        <span class="text-sm text-text-primary">Secure internship opportunities</span>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="flex flex-wrap items-center gap-4 text-sm">
+                                                    <div class="flex items-center space-x-2 text-text-secondary">
+                                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                                        </svg>
+                                                        <span>Aug 2026 - May 2030</span>
+                                                    </div>
+                                                    <a href="javascript:void(0)" class="text-accent hover:underline">Course Details</a>
+                                                    <a href="javascript:void(0)" class="text-accent hover:underline">Career Prospects</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Career Goal -->
+                                    <div class="relative flex items-start space-x-6">
+                                        <div class="flex-shrink-0 w-16 h-16 bg-success rounded-full flex items-center justify-center relative z-10">
+                                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2V6"/>
+                                            </svg>
+                                        </div>
+                                        <div class="flex-1 min-w-0">
+                                            <div class="card p-6 border-l-4 border-success">
+                                                <div class="flex items-center justify-between mb-3">
+                                                    <h3 class="text-lg font-heading font-semibold text-text-primary">Software Engineer Career</h3>
+                                                    <span class="px-3 py-1 bg-success-100 text-success text-sm rounded-full">Ultimate Goal</span>
+                                                </div>
+                                                <p class="text-text-secondary mb-4">Launch your career as a software engineer with strong technical skills and industry experience.</p>
+                                                
+                                                <!-- Career Prospects -->
+                                                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                                    <div class="bg-success-50 rounded-lg p-4">
+                                                        <h4 class="font-medium text-text-primary mb-2">Expected Salary</h4>
+                                                        <p class="text-success font-bold">₹6-12 LPA</p>
+                                                    </div>
+                                                    <div class="bg-success-50 rounded-lg p-4">
+                                                        <h4 class="font-medium text-text-primary mb-2">Job Market</h4>
+                                                        <p class="text-success font-bold">High Demand</p>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="flex flex-wrap items-center gap-4 text-sm">
+                                                    <div class="flex items-center space-x-2 text-text-secondary">
+                                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                                        </svg>
+                                                        <span>2030 onwards</span>
+                                                    </div>
+                                                    <a href="javascript:void(0)" class="text-success hover:underline">Job Opportunities</a>
+                                                    <a href="javascript:void(0)" class="text-success hover:underline">Skill Requirements</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- AI Recommendations -->
+                        <div class="mt-8 card p-6 bg-gradient-to-r from-primary-50 to-secondary-50">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="font-heading font-semibold text-text-primary mb-2">AI Recommendations</h3>
+                                    <div class="space-y-3">
+                                        <div class="bg-white rounded-lg p-4 border border-primary-200">
+                                            <p class="text-sm text-text-primary mb-2"><strong>Optimization Suggestion:</strong> Consider adding Python programming to your current phase for better preparation.</p>
+                                            <button class="text-primary text-sm hover:underline">Add to Roadmap</button>
+                                        </div>
+                                        <div class="bg-white rounded-lg p-4 border border-secondary-200">
+                                            <p class="text-sm text-text-primary mb-2"><strong>Alternative Path:</strong> Data Science specialization could be a great alternative given your math scores.</p>
+                                            <button class="text-secondary text-sm hover:underline">Explore Option</button>
+                                        </div>
+                                        <div class="bg-white rounded-lg p-4 border border-accent-200">
+                                            <p class="text-sm text-text-primary mb-2"><strong>Opportunity Alert:</strong> NIT Srinagar is offering new AI & ML specialization from 2026.</p>
+                                            <button class="text-accent text-sm hover:underline">Learn More</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Checklist View (Hidden by default) -->
+                    <div id="checklistView" class="roadmap-view hidden">
+                        <div class="card p-8">
+                            <h2 class="text-2xl font-heading font-bold text-text-primary mb-8">Career Roadmap Checklist</h2>
+                            
+                            <div class="space-y-6">
+                                <!-- Phase 1 -->
+                                <div class="border border-border rounded-lg p-6">
+                                    <h3 class="text-lg font-heading font-semibold text-text-primary mb-4">Phase 1: Class 12 Board Preparation</h3>
+                                    <div class="grid md:grid-cols-2 gap-4">
+                                        <div class="space-y-3">
+                                            <div class="flex items-center space-x-3">
+                                                <input type="checkbox" class="rounded border-border text-primary focus:ring-primary" checked />
+                                                <span class="text-sm text-text-primary line-through">Complete Physics syllabus revision</span>
+                                            </div>
+                                            <div class="flex items-center space-x-3">
+                                                <input type="checkbox" class="rounded border-border text-primary focus:ring-primary" checked />
+                                                <span class="text-sm text-text-primary line-through">Mathematics practice tests</span>
+                                            </div>
+                                        </div>
+                                        <div class="space-y-3">
+                                            <div class="flex items-center space-x-3">
+                                                <input type="checkbox" class="rounded border-border text-primary focus:ring-primary" />
+                                                <span class="text-sm text-text-primary">JEE Main preparation</span>
+                                            </div>
+                                            <div class="flex items-center space-x-3">
+                                                <input type="checkbox" class="rounded border-border text-primary focus:ring-primary" />
+                                                <span class="text-sm text-text-primary">Apply for JEE Advanced</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Phase 2 -->
+                                <div class="border border-border rounded-lg p-6">
+                                    <h3 class="text-lg font-heading font-semibold text-text-primary mb-4">Phase 2: College Admission Process</h3>
+                                    <div class="grid md:grid-cols-2 gap-4">
+                                        <div class="space-y-3">
+                                            <div class="flex items-center space-x-3">
+                                                <input type="checkbox" class="rounded border-border text-primary focus:ring-primary" />
+                                                <span class="text-sm text-text-primary">Research top engineering colleges in J&K</span>
+                                            </div>
+                                            <div class="flex items-center space-x-3">
+                                                <input type="checkbox" class="rounded border-border text-primary focus:ring-primary" />
+                                                <span class="text-sm text-text-primary">Prepare application documents</span>
+                                            </div>
+                                        </div>
+                                        <div class="space-y-3">
+                                            <div class="flex items-center space-x-3">
+                                                <input type="checkbox" class="rounded border-border text-primary focus:ring-primary" />
+                                                <span class="text-sm text-text-primary">Apply for counseling process</span>
+                                            </div>
+                                            <div class="flex items-center space-x-3">
+                                                <input type="checkbox" class="rounded border-border text-primary focus:ring-primary" />
+                                                <span class="text-sm text-text-primary">Attend college interviews</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Phase 3 -->
+                                <div class="border border-border rounded-lg p-6">
+                                    <h3 class="text-lg font-heading font-semibold text-text-primary mb-4">Phase 3: B.Tech Computer Science</h3>
+                                    <div class="grid md:grid-cols-2 gap-4">
+                                        <div class="space-y-3">
+                                            <div class="flex items-center space-x-3">
+                                                <input type="checkbox" class="rounded border-border text-primary focus:ring-primary" />
+                                                <span class="text-sm text-text-primary">Master programming fundamentals</span>
+                                            </div>
+                                            <div class="flex items-center space-x-3">
+                                                <input type="checkbox" class="rounded border-border text-primary focus:ring-primary" />
+                                                <span class="text-sm text-text-primary">Participate in coding competitions</span>
+                                            </div>
+                                        </div>
+                                        <div class="space-y-3">
+                                            <div class="flex items-center space-x-3">
+                                                <input type="checkbox" class="rounded border-border text-primary focus:ring-primary" />
+                                                <span class="text-sm text-text-primary">Build portfolio projects</span>
+                                            </div>
+                                            <div class="flex items-center space-x-3">
+                                                <input type="checkbox" class="rounded border-border text-primary focus:ring-primary" />
+                                                <span class="text-sm text-text-primary">Secure internship opportunities</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Calendar View (Hidden by default) -->
+                    <div id="calendarView" class="roadmap-view hidden">
+                        <div class="card p-8">
+                            <h2 class="text-2xl font-heading font-bold text-text-primary mb-8">Career Roadmap Calendar</h2>
+                            
+                            <!-- Calendar Header -->
+                            <div class="flex items-center justify-between mb-6">
+                                <button class="p-2 hover:bg-gray-100 rounded-lg transition-custom">
+                                    <svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                                    </svg>
+                                </button>
+                                <h3 class="text-xl font-heading font-semibold text-text-primary">October 2025</h3>
+                                <button class="p-2 hover:bg-gray-100 rounded-lg transition-custom">
+                                    <svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <!-- Calendar Grid -->
+                            <div class="grid grid-cols-7 gap-1 mb-4">
+                                <!-- Day Headers -->
+                                <div class="p-3 text-center text-sm font-medium text-text-secondary">Sun</div>
+                                <div class="p-3 text-center text-sm font-medium text-text-secondary">Mon</div>
+                                <div class="p-3 text-center text-sm font-medium text-text-secondary">Tue</div>
+                                <div class="p-3 text-center text-sm font-medium text-text-secondary">Wed</div>
+                                <div class="p-3 text-center text-sm font-medium text-text-secondary">Thu</div>
+                                <div class="p-3 text-center text-sm font-medium text-text-secondary">Fri</div>
+                                <div class="p-3 text-center text-sm font-medium text-text-secondary">Sat</div>
+                                
+                                <!-- Calendar Days -->
+                                <div class="p-3 text-center text-sm text-text-secondary">29</div>
+                                <div class="p-3 text-center text-sm text-text-secondary">30</div>
+                                <div class="p-3 text-center text-sm text-text-primary">1</div>
+                                <div class="p-3 text-center text-sm text-text-primary">2</div>
+                                <div class="p-3 text-center text-sm text-text-primary">3</div>
+                                <div class="p-3 text-center text-sm text-text-primary">4</div>
+                                <div class="p-3 text-center text-sm text-text-primary">5</div>
+                                
+                                <div class="p-3 text-center text-sm text-text-primary">6</div>
+                                <div class="p-3 text-center text-sm text-text-primary">7</div>
+                                <div class="p-3 text-center text-sm text-text-primary">8</div>
+                                <div class="p-3 text-center text-sm text-text-primary">9</div>
+                                <div class="p-3 text-center text-sm text-text-primary">10</div>
+                                <div class="p-3 text-center text-sm text-text-primary">11</div>
+                                <div class="p-3 text-center text-sm text-text-primary">12</div>
+                                
+                                <div class="p-3 text-center text-sm text-text-primary">13</div>
+                                <div class="p-3 text-center text-sm text-text-primary">14</div>
+                                <div class="p-3 text-center text-sm text-text-primary relative">
+                                    15
+                                    <div class="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-primary rounded-full"></div>
+                                </div>
+                                <div class="p-3 text-center text-sm text-text-primary">16</div>
+                                <div class="p-3 text-center text-sm text-text-primary">17</div>
+                                <div class="p-3 text-center text-sm text-text-primary">18</div>
+                                <div class="p-3 text-center text-sm text-text-primary">19</div>
+                                
+                                <div class="p-3 text-center text-sm text-text-primary">20</div>
+                                <div class="p-3 text-center text-sm text-text-primary">21</div>
+                                <div class="p-3 text-center text-sm text-text-primary relative">
+                                    22
+                                    <div class="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-secondary rounded-full"></div>
+                                </div>
+                                <div class="p-3 text-center text-sm text-text-primary">23</div>
+                                <div class="p-3 text-center text-sm text-text-primary">24</div>
+                                <div class="p-3 text-center text-sm text-text-primary">25</div>
+                                <div class="p-3 text-center text-sm text-text-primary">26</div>
+                                
+                                <div class="p-3 text-center text-sm text-text-primary">27</div>
+                                <div class="p-3 text-center text-sm text-text-primary bg-primary text-white rounded-lg">28</div>
+                                <div class="p-3 text-center text-sm text-text-primary">29</div>
+                                <div class="p-3 text-center text-sm text-text-primary relative">
+                                    30
+                                    <div class="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-accent rounded-full"></div>
+                                </div>
+                                <div class="p-3 text-center text-sm text-text-primary">31</div>
+                                <div class="p-3 text-center text-sm text-text-secondary">1</div>
+                                <div class="p-3 text-center text-sm text-text-secondary">2</div>
+                            </div>
+
+                            <!-- Upcoming Events -->
+                            <div class="mt-8">
+                                <h4 class="font-heading font-semibold text-text-primary mb-4">Upcoming Milestones</h4>
+                                <div class="space-y-3">
+                                    <div class="flex items-center space-x-4 p-4 bg-primary-50 rounded-lg">
+                                        <div class="w-3 h-3 bg-primary rounded-full"></div>
+                                        <div class="flex-1">
+                                            <p class="font-medium text-text-primary">Physics Mock Test</p>
+                                            <p class="text-sm text-text-secondary">October 15, 2025</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center space-x-4 p-4 bg-secondary-50 rounded-lg">
+                                        <div class="w-3 h-3 bg-secondary rounded-full"></div>
+                                        <div class="flex-1">
+                                            <p class="font-medium text-text-primary">JEE Main Registration Opens</p>
+                                            <p class="text-sm text-text-secondary">October 22, 2025</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center space-x-4 p-4 bg-accent-50 rounded-lg">
+                                        <div class="w-3 h-3 bg-accent rounded-full"></div>
+                                        <div class="flex-1">
+                                            <p class="font-medium text-text-primary">Mathematics Revision Complete</p>
+                                            <p class="text-sm text-text-secondary">October 30, 2025</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface border-t border-border mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center text-text-secondary">
+                <p>&copy; 2025 Nayi Raah. All Rights Reserved. Empowering students across Jammu & Kashmir.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Roadmap Functionality -->
+    <script>
+        // View switching functionality
+        const viewRadios = document.querySelectorAll('input[name="viewType"]');
+        const views = {
+            timeline: document.getElementById('timelineView'),
+            checklist: document.getElementById('checklistView'),
+            calendar: document.getElementById('calendarView')
+        };
+
+        viewRadios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                const selectedView = e.target.value;
+                
+                // Hide all views
+                Object.values(views).forEach(view => {
+                    view.classList.add('hidden');
+                });
+                
+                // Show selected view
+                views[selectedView].classList.remove('hidden');
+            });
+        });
+
+        // Generate Roadmap functionality
+        document.getElementById('generateRoadmapBtn').addEventListener('click', () => {
+            // Simulate roadmap generation
+            const button = document.getElementById('generateRoadmapBtn');
+            const originalText = button.innerHTML;
+            
+            button.innerHTML = `
+                <svg class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                </svg>
+                <span>Generating...</span>
+            `;
+            button.disabled = true;
+            
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.disabled = false;
+                alert('Roadmap updated with latest recommendations!');
+            }, 2000);
+        });
+
+        // Export PDF functionality
+        document.getElementById('exportPdfBtn').addEventListener('click', () => {
+            // Simulate PDF export
+            const button = document.getElementById('exportPdfBtn');
+            const originalText = button.innerHTML;
+            
+            button.innerHTML = `
+                <svg class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                </svg>
+                <span>Exporting...</span>
+            `;
+            button.disabled = true;
+            
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.disabled = false;
+                
+                // Create a temporary download link
+                const link = document.createElement('a');
+                link.href = 'javascript:void(0)';
+                link.download = 'career-roadmap-arjun-sharma.pdf';
+                link.click();
+                
+                alert('Roadmap exported successfully! Check your downloads folder.');
+            }, 2000);
+        });
+
+        // Checkbox functionality for progress tracking
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', (e) => {
+                const label = e.target.nextElementSibling;
+                if (e.target.checked) {
+                    label.classList.add('line-through');
+                    label.classList.add('text-text-secondary');
+                } else {
+                    label.classList.remove('line-through');
+                    label.classList.remove('text-text-secondary');
+                }
+                
+                // Update progress
+                updateProgress();
+            });
+        });
+
+        // Update progress calculation
+        function updateProgress() {
+            const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+            const checkedBoxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            const progress = Math.round((checkedBoxes.length / allCheckboxes.length) * 100);
+            
+            const progressFill = document.querySelector('.progress-fill');
+            const progressText = document.querySelector('.progress-bar').parentElement.querySelector('.text-text-primary.font-medium');
+            
+            if (progressFill && progressText) {
+                progressFill.style.width = progress + '%';
+                progressText.textContent = progress + '%';
+            }
+            
+            // Update completed/remaining counts
+            const completedElement = document.querySelector('.text-success');
+            const remainingElement = document.querySelector('.text-warning');
+            
+            if (completedElement && remainingElement) {
+                completedElement.textContent = checkedBoxes.length;
+                remainingElement.textContent = allCheckboxes.length - checkedBoxes.length;
+            }
+        }
+
+        // AI Recommendation interactions
+        document.querySelectorAll('.bg-white button').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const recommendation = e.target.closest('.bg-white');
+                recommendation.style.opacity = '0.7';
+                
+                setTimeout(() => {
+                    recommendation.style.opacity = '1';
+                    alert('Recommendation processed! Your roadmap has been updated.');
+                }, 500);
+            });
+        });
+
+        // Initialize progress on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateProgress();
+        });
+
+        // Customization options functionality
+        document.querySelectorAll('select, input[type="checkbox"]').forEach(element => {
+            element.addEventListener('change', () => {
+                // Simulate roadmap customization
+                console.log('Roadmap customization updated');
+            });
+        });
+
+        // Calendar navigation (for calendar view)
+        document.querySelectorAll('.p-2.hover\\:bg-gray-100').forEach(button => {
+            button.addEventListener('click', () => {
+                // Simulate calendar navigation
+                console.log('Calendar navigation clicked');
+            });
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

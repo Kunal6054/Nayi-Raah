@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Login - Nayi Raah</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/tailwind.css" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fnayiraah8247back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background min-h-screen">
+    <!-- Header Navigation -->
+    <header class="bg-surface shadow-custom border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <svg class="h-8 w-8 text-primary mr-3" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                    <h1 class="text-xl font-heading font-semibold text-primary">Nayi Raah</h1>
+                </div>
+                
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="student_registration.html" class="text-text-secondary hover:text-primary transition-custom">Register</a>
+                    <a href="student_dashboard.html" class="text-text-secondary hover:text-primary transition-custom">Dashboard</a>
+                    <a href="aptitude_assessment_quiz.html" class="text-text-secondary hover:text-primary transition-custom">Assessment</a>
+                    <a href="career_roadmap_generator.html" class="text-text-secondary hover:text-primary transition-custom">Roadmap</a>
+                    <a href="ai_guidance_chat.html" class="text-text-secondary hover:text-primary transition-custom">AI Guidance</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 rounded-md text-text-secondary hover:text-primary hover:bg-primary-50 transition-custom">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                
+                <!-- Login Form Section -->
+                <div class="order-2 lg:order-1">
+                    <div class="card p-8">
+                        <!-- Form Header -->
+                        <div class="text-center mb-8">
+                            <h2 class="text-3xl font-heading font-bold text-text-primary mb-2">Welcome Back</h2>
+                            <p class="text-text-secondary">Sign in to continue your educational journey</p>
+                        </div>
+
+                        <!-- Login Form -->
+                        <form id="loginForm" class="space-y-6">
+                            <!-- Email Field -->
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-text-primary mb-2">Email Address *</label>
+                                <input type="email" id="email" name="email" class="input-field" placeholder="student@example.com" required />
+                                <div class="text-error-500 text-sm mt-1 hidden" id="emailError">Please enter a valid email address</div>
+                            </div>
+
+                            <!-- Password Field -->
+                            <div>
+                                <label for="password" class="block text-sm font-medium text-text-primary mb-2">Password *</label>
+                                <div class="relative">
+                                    <input type="password" id="password" name="password" class="input-field pr-12" placeholder="Enter your password" required />
+                                    <button type="button" id="togglePassword" class="absolute inset-y-0 right-0 pr-3 flex items-center text-text-secondary hover:text-primary transition-custom">
+                                        <svg id="eyeIcon" class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                        </svg>
+                                        <svg id="eyeOffIcon" class="h-5 w-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="text-error-500 text-sm mt-1 hidden" id="passwordError">Please enter your password</div>
+                            </div>
+
+                            <!-- Remember Me & Forgot Password -->
+                            <div class="flex items-center justify-between">
+                                <label class="flex items-center">
+                                    <input type="checkbox" id="rememberMe" name="rememberMe" class="rounded border-border text-primary focus:ring-primary" />
+                                    <span class="ml-2 text-sm text-text-secondary">Remember me</span>
+                                </label>
+                                <a href="javascript:void(0)" class="text-sm text-primary hover:underline">Forgot password?</a>
+                            </div>
+
+                            <!-- Login Button -->
+                            <button type="submit" class="btn-primary w-full py-3 text-base font-medium" id="loginBtn">
+                                <span id="loginText">Sign In</span>
+                                <svg id="loadingIcon" class="animate-spin -ml-1 mr-3 h-5 w-5 text-white hidden" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
+                                </svg>
+                            </button>
+
+                            <!-- Demo Credentials -->
+                            <div class="bg-primary-50 border border-primary-200 rounded-lg p-4">
+                                <h4 class="text-sm font-medium text-primary mb-2">Demo Credentials</h4>
+                                <div class="space-y-1 text-sm text-text-secondary">
+                                    <p><strong>Student:</strong> student@example.com / password123</p>
+                                    <p><strong>Demo User:</strong> demo@nayiraah.com / demo123</p>
+                                </div>
+                            </div>
+
+                            <!-- Social Login Options -->
+                            <div class="mt-6">
+                                <div class="relative">
+                                    <div class="absolute inset-0 flex items-center">
+                                        <div class="w-full border-t border-border"></div>
+                                    </div>
+                                    <div class="relative flex justify-center text-sm">
+                                        <span class="px-2 bg-surface text-text-secondary">Or continue with</span>
+                                    </div>
+                                </div>
+
+                                <div class="mt-6 grid grid-cols-2 gap-3">
+                                    <button type="button" class="w-full inline-flex justify-center py-2 px-4 border border-border rounded-md shadow-sm bg-surface text-sm font-medium text-text-secondary hover:bg-gray-50 transition-custom">
+                                        <svg class="h-5 w-5 text-red-500" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                            <path fill="currentColor" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                            <path fill="currentColor" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                            <path fill="currentColor" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                                        </svg>
+                                        <span class="ml-2">Google</span>
+                                    </button>
+
+                                    <button type="button" class="w-full inline-flex justify-center py-2 px-4 border border-border rounded-md shadow-sm bg-surface text-sm font-medium text-text-secondary hover:bg-gray-50 transition-custom">
+                                        <svg class="h-5 w-5 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                        </svg>
+                                        <span class="ml-2">Facebook</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- Registration Link -->
+                        <div class="text-center mt-6 pt-6 border-t border-border">
+                            <p class="text-text-secondary">
+                                Don't have an account? 
+                                <a href="student_registration.html" class="text-primary hover:underline font-medium">Create one here</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Platform Highlights Section -->
+                <div class="order-1 lg:order-2">
+                    <div class="sticky top-8">
+                        <!-- Hero Image -->
+                        <div class="relative mb-8 rounded-2xl overflow-hidden">
+                            <img src="https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Students celebrating success" class="w-full h-64 object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-primary-900/80 to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 text-white">
+                                <h3 class="text-2xl font-heading font-bold mb-2">Your Success Story Awaits</h3>
+                                <p class="text-primary-100">Join thousands of J&K students achieving their dreams</p>
+                            </div>
+                        </div>
+
+                        <!-- Success Stories -->
+                        <div class="space-y-6">
+                            <div class="card p-6 bg-gradient-to-r from-success-50 to-primary-50">
+                                <h4 class="font-heading font-semibold text-text-primary mb-4">Recent Success Stories</h4>
+                                
+                                <div class="space-y-4">
+                                    <div class="flex items-start space-x-3">
+                                        <img src="https://images.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg" alt="Arjun Kumar" class="w-12 h-12 rounded-full object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                        <div class="flex-1">
+                                            <p class="text-sm text-text-primary font-medium">Arjun Kumar, Srinagar</p>
+                                            <p class="text-xs text-text-secondary">"Got admission to NIT Srinagar through Nayi Raah's guidance. The AI recommendations were spot-on!"</p>
+                                            <div class="flex items-center mt-1">
+                                                <div class="flex text-yellow-400">
+                                                    <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                                    <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                                    <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                                    <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                                    <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                                </div>
+                                                <span class="text-xs text-text-secondary ml-1">5.0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start space-x-3">
+                                        <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Priya Sharma" class="w-12 h-12 rounded-full object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                        <div class="flex-1">
+                                            <p class="text-sm text-text-primary font-medium">Priya Sharma, Jammu</p>
+                                            <p class="text-xs text-text-secondary">"Discovered my passion for biotechnology. Now pursuing B.Sc at Government College for Women, Jammu."</p>
+                                            <div class="flex items-center mt-1">
+                                                <div class="flex text-yellow-400">
+                                                    <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                                    <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                                    <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                                    <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                                    <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                                </div>
+                                                <span class="text-xs text-text-secondary ml-1">5.0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start space-x-3">
+                                        <img src="https://images.pixabay.com/photo/2016/11/29/09/38/adult-1868750_1280.jpg" alt="Mohit Singh" class="w-12 h-12 rounded-full object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                        <div class="flex-1">
+                                            <p class="text-sm text-text-primary font-medium">Mohit Singh, Baramulla</p>
+                                            <p class="text-xs text-text-secondary">"The career roadmap helped me choose Commerce stream. Now preparing for CA with clear goals."</p>
+                                            <div class="flex items-center mt-1">
+                                                <div class="flex text-yellow-400">
+                                                    <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                                    <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                                    <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                                    <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                                    <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                                </div>
+                                                <span class="text-xs text-text-secondary ml-1">5.0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Platform Statistics -->
+                            <div class="card p-6 bg-gradient-to-r from-secondary-50 to-accent-50">
+                                <h4 class="font-heading font-semibold text-text-primary mb-4">Government College Enrollment Impact</h4>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="text-center">
+                                        <div class="text-2xl font-bold text-primary">85%</div>
+                                        <div class="text-sm text-text-secondary">Enrollment Increase</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-2xl font-bold text-secondary">2,500+</div>
+                                        <div class="text-sm text-text-secondary">Students Placed</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-2xl font-bold text-accent">45+</div>
+                                        <div class="text-sm text-text-secondary">Partner Colleges</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-2xl font-bold text-success">92%</div>
+                                        <div class="text-sm text-text-secondary">Satisfaction Rate</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Platform Features -->
+                            <div class="card p-6">
+                                <h4 class="font-heading font-semibold text-text-primary mb-4">What You'll Get Access To</h4>
+                                <div class="space-y-3">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                            </svg>
+                                        </div>
+                                        <span class="text-sm text-text-primary">Personalized AI-powered career recommendations</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-secondary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                            </svg>
+                                        </div>
+                                        <span class="text-sm text-text-primary">Comprehensive aptitude and interest assessments</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-accent-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                            </svg>
+                                        </div>
+                                        <span class="text-sm text-text-primary">Detailed career roadmaps with actionable steps</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-success-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-4 h-4 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                            </svg>
+                                        </div>
+                                        <span class="text-sm text-text-primary">Government college directory and admission alerts</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface border-t border-border mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center text-text-secondary">
+                <p>&copy; 2025 Nayi Raah. All Rights Reserved. Empowering students across Jammu & Kashmir.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Login Form -->
+    <script>
+        // Password toggle functionality
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordField = document.getElementById('password');
+        const eyeIcon = document.getElementById('eyeIcon');
+        const eyeOffIcon = document.getElementById('eyeOffIcon');
+
+        togglePassword.addEventListener('click', function() {
+            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordField.setAttribute('type', type);
+            
+            eyeIcon.classList.toggle('hidden');
+            eyeOffIcon.classList.toggle('hidden');
+        });
+
+        // Form validation and submission
+        const loginForm = document.getElementById('loginForm');
+        const emailField = document.getElementById('email');
+        const loginBtn = document.getElementById('loginBtn');
+        const loginText = document.getElementById('loginText');
+        const loadingIcon = document.getElementById('loadingIcon');
+
+        // Demo credentials
+        const demoCredentials = {
+            'student@example.com': 'password123',
+            'demo@nayiraah.com': 'demo123'
+        };
+
+        function showError(fieldId, message) {
+            const errorElement = document.getElementById(fieldId + 'Error');
+            const field = document.getElementById(fieldId);
+            
+            if (errorElement) {
+                errorElement.textContent = message;
+                errorElement.classList.remove('hidden');
+            }
+            field.classList.add('border-error-500');
+        }
+
+        function hideError(fieldId) {
+            const errorElement = document.getElementById(fieldId + 'Error');
+            const field = document.getElementById(fieldId);
+            
+            if (errorElement) {
+                errorElement.classList.add('hidden');
+            }
+            field.classList.remove('border-error-500');
+        }
+
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function showLoading() {
+            loginText.textContent = 'Signing In...';
+            loadingIcon.classList.remove('hidden');
+            loginBtn.disabled = true;
+        }
+
+        function hideLoading() {
+            loginText.textContent = 'Sign In';
+            loadingIcon.classList.add('hidden');
+            loginBtn.disabled = false;
+        }
+
+        // Real-time validation
+        emailField.addEventListener('blur', function() {
+            const email = this.value.trim();
+            if (!email) {
+                showError('email', 'Email is required');
+            } else if (!validateEmail(email)) {
+                showError('email', 'Please enter a valid email address');
+            } else {
+                hideError('email');
+            }
+        });
+
+        passwordField.addEventListener('blur', function() {
+            const password = this.value.trim();
+            if (!password) {
+                showError('password', 'Password is required');
+            } else {
+                hideError('password');
+            }
+        });
+
+        // Form submission
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = emailField.value.trim();
+            const password = passwordField.value.trim();
+            let isValid = true;
+
+            // Reset errors
+            hideError('email');
+            hideError('password');
+
+            // Validate email
+            if (!email) {
+                showError('email', 'Email is required');
+                isValid = false;
+            } else if (!validateEmail(email)) {
+                showError('email', 'Please enter a valid email address');
+                isValid = false;
+            }
+
+            // Validate password
+            if (!password) {
+                showError('password', 'Password is required');
+                isValid = false;
+            }
+
+            if (!isValid) return;
+
+            // Show loading state
+            showLoading();
+
+            // Simulate API call
+            setTimeout(() => {
+                // Check demo credentials
+                if (demoCredentials[email] && demoCredentials[email] === password) {
+                    // Successful login
+                    localStorage.setItem('userEmail', email);
+                    localStorage.setItem('isLoggedIn', 'true');
+                    window.location.href = 'student_dashboard.html';
+                } else {
+                    // Invalid credentials
+                    hideLoading();
+                    showError('password', 'Invalid email or password. Please try demo credentials.');
+                }
+            }, 1500);
+        });
+
+        // Auto-fill demo credentials on click
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.bg-primary-50')) {
+                const credentialText = e.target.textContent;
+                if (credentialText.includes('student@example.com')) {
+                    emailField.value = 'student@example.com';
+                    passwordField.value = 'password123';
+                } else if (credentialText.includes('demo@nayiraah.com')) {
+                    emailField.value = 'demo@nayiraah.com';
+                    passwordField.value = 'demo123';
+                }
+            }
+        });
+
+        // Clear errors on input
+        emailField.addEventListener('input', function() {
+            if (this.classList.contains('border-error-500')) {
+                hideError('email');
+            }
+        });
+
+        passwordField.addEventListener('input', function() {
+            if (this.classList.contains('border-error-500')) {
+                hideError('password');
+            }
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

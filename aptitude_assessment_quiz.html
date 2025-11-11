@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aptitude Assessment Quiz - Nayi Raah</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/tailwind.css" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fnayiraah8247back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background min-h-screen">
+    <!-- Header Navigation -->
+    <header class="bg-surface shadow-custom border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <svg class="h-8 w-8 text-primary mr-3" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                    <h1 class="text-xl font-heading font-semibold text-primary">Nayi Raah</h1>
+                </div>
+                
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="student_login.html" class="text-text-secondary hover:text-primary transition-custom">Login</a>
+                    <a href="student_dashboard.html" class="text-text-secondary hover:text-primary transition-custom">Dashboard</a>
+                    <a href="aptitude_assessment_quiz.html" class="text-primary font-medium">Assessment</a>
+                    <a href="career_roadmap_generator.html" class="text-text-secondary hover:text-primary transition-custom">Roadmap</a>
+                    <a href="ai_guidance_chat.html" class="text-text-secondary hover:text-primary transition-custom">AI Guidance</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 rounded-md text-text-secondary hover:text-primary hover:bg-primary-50 transition-custom">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <!-- Quiz Header -->
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-heading font-bold text-text-primary mb-2">Aptitude Assessment Quiz</h2>
+                <p class="text-text-secondary max-w-2xl mx-auto">Discover your interests and strengths through our comprehensive assessment. Answer honestly to receive personalized stream recommendations tailored to your aptitude.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-4 gap-8">
+                <!-- Quiz Instructions Panel -->
+                <div class="lg:col-span-1 order-2 lg:order-1">
+                    <div class="sticky top-8 space-y-6">
+                        <!-- Progress Card -->
+                        <div class="card p-6">
+                            <h3 class="font-heading font-semibold text-text-primary mb-4">Quiz Progress</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex justify-between text-sm mb-2">
+                                        <span class="text-text-secondary">Overall Progress</span>
+                                        <span class="font-medium text-primary" id="progressText">15%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" id="progressBar" style="width: 15%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-text-secondary">Questions Completed</span>
+                                    <span class="font-medium" id="questionCount">3 of 20</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-text-secondary">Estimated Time</span>
+                                    <span class="font-medium text-accent" id="timeRemaining">12 min left</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Instructions Card -->
+                        <div class="card p-6">
+                            <h3 class="font-heading font-semibold text-text-primary mb-4">Instructions</h3>
+                            <div class="space-y-3 text-sm text-text-secondary">
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                        <span class="text-primary text-xs font-bold">1</span>
+                                    </div>
+                                    <p>Answer all questions honestly based on your genuine interests and preferences.</p>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-6 h-6 bg-secondary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                        <span class="text-secondary text-xs font-bold">2</span>
+                                    </div>
+                                    <p>Take your time to read each question carefully before selecting an answer.</p>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-6 h-6 bg-accent-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                        <span class="text-accent text-xs font-bold">3</span>
+                                    </div>
+                                    <p>Your progress is automatically saved. You can resume anytime if needed.</p>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-6 h-6 bg-success-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                        <span class="text-success text-xs font-bold">4</span>
+                                    </div>
+                                    <p>Results are confidential and used only for personalized recommendations.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Assessment Sections -->
+                        <div class="card p-6">
+                            <h3 class="font-heading font-semibold text-text-primary mb-4">Assessment Sections</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between p-3 bg-primary-50 rounded-lg">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                            </svg>
+                                        </div>
+                                        <span class="text-sm font-medium text-primary">Interests</span>
+                                    </div>
+                                    <span class="text-xs text-primary bg-white px-2 py-1 rounded">Completed</span>
+                                </div>
+                                <div class="flex items-center justify-between p-3 bg-secondary-50 rounded-lg">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-secondary rounded-lg flex items-center justify-center">
+                                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                                            </svg>
+                                        </div>
+                                        <span class="text-sm font-medium text-secondary">Aptitude</span>
+                                    </div>
+                                    <span class="text-xs text-secondary bg-white px-2 py-1 rounded">Current</span>
+                                </div>
+                                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-gray-300 rounded-lg flex items-center justify-center">
+                                            <svg class="w-4 h-4 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                                                <path fill-rule="evenodd" d="M4 5a2 2 0 012-2v1a1 1 0 001 1h6a1 1 0 001-1V3a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/>
+                                            </svg>
+                                        </div>
+                                        <span class="text-sm font-medium text-gray-600">Personality</span>
+                                    </div>
+                                    <span class="text-xs text-gray-500 bg-white px-2 py-1 rounded">Pending</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tips Card -->
+                        <div class="card p-6 bg-gradient-to-br from-success-50 to-primary-50">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 bg-success rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-heading font-semibold text-text-primary mb-2">Pro Tip</h4>
+                                    <p class="text-sm text-text-secondary">Choose the option that feels most natural to you, not what you think others expect. Authentic responses lead to better recommendations.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quiz Content Area -->
+                <div class="lg:col-span-3 order-1 lg:order-2">
+                    <!-- Question Card -->
+                    <div class="card p-8 mb-6" id="questionCard">
+                        <!-- Question Header -->
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-secondary-100 rounded-lg flex items-center justify-center">
+                                    <span class="text-secondary font-bold" id="questionNumber">4</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-heading font-semibold text-text-primary">Aptitude Assessment</h3>
+                                    <p class="text-sm text-text-secondary">Section 2 of 3</p>
+                                </div>
+                            </div>
+                            <button class="p-2 text-text-secondary hover:text-primary transition-custom" title="Save Progress">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3-3m0 0l-3 3m3-3v12"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Question Image -->
+                        <div class="mb-6 rounded-xl overflow-hidden">
+                            <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Students working on science experiment" class="w-full h-48 object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        </div>
+
+                        <!-- Question Text -->
+                        <div class="mb-8">
+                            <h4 class="text-xl font-heading font-semibold text-text-primary mb-4" id="questionText">
+                                You're working on a group project about environmental conservation. Which role would you naturally gravitate towards?
+                            </h4>
+                            <p class="text-text-secondary text-sm">Choose the option that best describes your natural preference and working style.</p>
+                        </div>
+
+                        <!-- Answer Options -->
+                        <div class="space-y-4" id="answerOptions">
+                            <label class="flex items-start space-x-4 p-4 border-2 border-border rounded-lg cursor-pointer hover:border-primary-300 hover:bg-primary-50 transition-custom answer-option">
+                                <input type="radio" name="answer" value="A" class="mt-1 text-primary focus:ring-primary" />
+                                <div class="flex-1">
+                                    <div class="flex items-center space-x-3 mb-2">
+                                        <div class="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center">
+                                            <svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                                                <path fill-rule="evenodd" d="M4 5a2 2 0 012-2v1a1 1 0 001 1h6a1 1 0 001-1V3a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm8 8a1 1 0 01-1-1V8a1 1 0 012 0v4a1 1 0 01-1 1z" clip-rule="evenodd"/>
+                                            </svg>
+                                        </div>
+                                        <span class="font-medium text-text-primary">Research and Data Analysis</span>
+                                    </div>
+                                    <p class="text-sm text-text-secondary ml-11">Collecting scientific data, analyzing environmental impact studies, and creating detailed research reports with statistical findings.</p>
+                                </div>
+                            </label>
+
+                            <label class="flex items-start space-x-4 p-4 border-2 border-border rounded-lg cursor-pointer hover:border-secondary-300 hover:bg-secondary-50 transition-custom answer-option">
+                                <input type="radio" name="answer" value="B" class="mt-1 text-secondary focus:ring-secondary" />
+                                <div class="flex-1">
+                                    <div class="flex items-center space-x-3 mb-2">
+                                        <div class="w-8 h-8 bg-secondary-100 rounded-lg flex items-center justify-center">
+                                            <svg class="w-4 h-4 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+                                            </svg>
+                                        </div>
+                                        <span class="font-medium text-text-primary">Creative Design and Presentation</span>
+                                    </div>
+                                    <p class="text-sm text-text-secondary ml-11">Designing infographics, creating visual presentations, and developing creative campaigns to communicate environmental messages effectively.</p>
+                                </div>
+                            </label>
+
+                            <label class="flex items-start space-x-4 p-4 border-2 border-border rounded-lg cursor-pointer hover:border-accent-300 hover:bg-accent-50 transition-custom answer-option">
+                                <input type="radio" name="answer" value="C" class="mt-1 text-accent focus:ring-accent" />
+                                <div class="flex-1">
+                                    <div class="flex items-center space-x-3 mb-2">
+                                        <div class="w-8 h-8 bg-accent-100 rounded-lg flex items-center justify-center">
+                                            <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                                            </svg>
+                                        </div>
+                                        <span class="font-medium text-text-primary">Community Outreach and Organization</span>
+                                    </div>
+                                    <p class="text-sm text-text-secondary ml-11">Coordinating team activities, organizing community events, and managing project timelines to ensure successful implementation.</p>
+                                </div>
+                            </label>
+
+                            <label class="flex items-start space-x-4 p-4 border-2 border-border rounded-lg cursor-pointer hover:border-success-300 hover:bg-success-50 transition-custom answer-option">
+                                <input type="radio" name="answer" value="D" class="mt-1 text-success focus:ring-success" />
+                                <div class="flex-1">
+                                    <div class="flex items-center space-x-3 mb-2">
+                                        <div class="w-8 h-8 bg-success-100 rounded-lg flex items-center justify-center">
+                                            <svg class="w-4 h-4 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                        </div>
+                                        <span class="font-medium text-text-primary">Practical Implementation and Solutions</span>
+                                    </div>
+                                    <p class="text-sm text-text-secondary ml-11">Developing practical conservation strategies, implementing sustainable solutions, and hands-on environmental improvement activities.</p>
+                                </div>
+                            </label>
+                        </div>
+
+                        <!-- Question Navigation -->
+                        <div class="flex items-center justify-between mt-8 pt-6 border-t border-border">
+                            <button class="flex items-center space-x-2 px-6 py-3 border border-border text-text-secondary rounded-lg hover:bg-gray-50 transition-custom" id="prevBtn">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                                </svg>
+                                <span>Previous</span>
+                            </button>
+
+                            <div class="flex items-center space-x-4">
+                                <button class="px-4 py-2 text-text-secondary hover:text-primary transition-custom" id="skipBtn">
+                                    Skip Question
+                                </button>
+                                <button class="btn-primary px-8 py-3 flex items-center space-x-2" id="nextBtn">
+                                    <span>Next Question</span>
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Navigation -->
+                    <div class="card p-6">
+                        <h3 class="font-heading font-semibold text-text-primary mb-4">Question Navigation</h3>
+                        <div class="grid grid-cols-10 gap-2">
+                            <button class="w-8 h-8 bg-success text-white rounded text-sm font-medium">1</button>
+                            <button class="w-8 h-8 bg-success text-white rounded text-sm font-medium">2</button>
+                            <button class="w-8 h-8 bg-success text-white rounded text-sm font-medium">3</button>
+                            <button class="w-8 h-8 bg-secondary text-white rounded text-sm font-medium">4</button>
+                            <button class="w-8 h-8 bg-border text-text-secondary rounded text-sm font-medium hover:bg-primary hover:text-white transition-custom">5</button>
+                            <button class="w-8 h-8 bg-border text-text-secondary rounded text-sm font-medium hover:bg-primary hover:text-white transition-custom">6</button>
+                            <button class="w-8 h-8 bg-border text-text-secondary rounded text-sm font-medium hover:bg-primary hover:text-white transition-custom">7</button>
+                            <button class="w-8 h-8 bg-border text-text-secondary rounded text-sm font-medium hover:bg-primary hover:text-white transition-custom">8</button>
+                            <button class="w-8 h-8 bg-border text-text-secondary rounded text-sm font-medium hover:bg-primary hover:text-white transition-custom">9</button>
+                            <button class="w-8 h-8 bg-border text-text-secondary rounded text-sm font-medium hover:bg-primary hover:text-white transition-custom">10</button>
+                            <button class="w-8 h-8 bg-border text-text-secondary rounded text-sm font-medium hover:bg-primary hover:text-white transition-custom">11</button>
+                            <button class="w-8 h-8 bg-border text-text-secondary rounded text-sm font-medium hover:bg-primary hover:text-white transition-custom">12</button>
+                            <button class="w-8 h-8 bg-border text-text-secondary rounded text-sm font-medium hover:bg-primary hover:text-white transition-custom">13</button>
+                            <button class="w-8 h-8 bg-border text-text-secondary rounded text-sm font-medium hover:bg-primary hover:text-white transition-custom">14</button>
+                            <button class="w-8 h-8 bg-border text-text-secondary rounded text-sm font-medium hover:bg-primary hover:text-white transition-custom">15</button>
+                            <button class="w-8 h-8 bg-border text-text-secondary rounded text-sm font-medium hover:bg-primary hover:text-white transition-custom">16</button>
+                            <button class="w-8 h-8 bg-border text-text-secondary rounded text-sm font-medium hover:bg-primary hover:text-white transition-custom">17</button>
+                            <button class="w-8 h-8 bg-border text-text-secondary rounded text-sm font-medium hover:bg-primary hover:text-white transition-custom">18</button>
+                            <button class="w-8 h-8 bg-border text-text-secondary rounded text-sm font-medium hover:bg-primary hover:text-white transition-custom">19</button>
+                            <button class="w-8 h-8 bg-border text-text-secondary rounded text-sm font-medium hover:bg-primary hover:text-white transition-custom">20</button>
+                        </div>
+                        <div class="flex items-center justify-between mt-4 text-sm">
+                            <div class="flex items-center space-x-4">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-4 h-4 bg-success rounded"></div>
+                                    <span class="text-text-secondary">Answered</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-4 h-4 bg-secondary rounded"></div>
+                                    <span class="text-text-secondary">Current</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-4 h-4 bg-border rounded"></div>
+                                    <span class="text-text-secondary">Pending</span>
+                                </div>
+                            </div>
+                            <button class="text-primary hover:underline">Review Answers</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface border-t border-border mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center text-text-secondary">
+                <p>&copy; 2025 Nayi Raah. All Rights Reserved. Empowering students across Jammu & Kashmir.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quiz Completion Modal -->
+    <div id="completionModal" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm hidden items-center justify-center z-50">
+        <div class="bg-surface rounded-2xl p-8 max-w-md mx-4 transform scale-95 transition-transform">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-success-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-success" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-heading font-bold text-text-primary mb-2">Assessment Complete!</h3>
+                <p class="text-text-secondary mb-6">Great job! You've completed the aptitude assessment. Your personalized results are ready.</p>
+                <div class="flex space-x-3">
+                    <button class="flex-1 px-4 py-2 border border-border text-text-secondary rounded-lg hover:bg-gray-50 transition-custom">
+                        Save & Exit
+                    </button>
+                    <button class="flex-1 btn-primary px-4 py-2" onclick="window.location.href='career_roadmap_generator.html'">
+                        View Results
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Quiz Functionality -->
+    <script>
+        let currentQuestion = 4;
+        const totalQuestions = 20;
+        let answers = {};
+
+        // Sample questions data
+        const questions = [
+            {
+                id: 1,
+                section: "Interests",
+                text: "Which activity would you most enjoy during your free time?",
+                image: "https://images.pixabay.com/photos/2016/11/29/06/15/student-1867750_1280.jpg",
+                options: [
+                    { value: "A", text: "Reading books and researching topics", icon: "book", stream: "science" },
+                    { value: "B", text: "Creating art or designing something", icon: "palette", stream: "arts" },
+                    { value: "C", text: "Organizing events or leading groups", icon: "users", stream: "commerce" },
+                    { value: "D", text: "Building or fixing things", icon: "tools", stream: "vocational" }
+                ]
+            },
+            // Add more questions as needed
+        ];
+
+        function updateProgress() {
+            const progress = (currentQuestion / totalQuestions) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+            document.getElementById('progressText').textContent = Math.round(progress) + '%';
+            document.getElementById('questionCount').textContent = `${currentQuestion} of ${totalQuestions}`;
+            
+            // Update time remaining (mock calculation)
+            const timeRemaining = Math.max(0, (totalQuestions - currentQuestion) * 0.75);
+            document.getElementById('timeRemaining').textContent = `${Math.ceil(timeRemaining)} min left`;
+        }
+
+        function selectAnswer(value) {
+            answers[currentQuestion] = value;
+            
+            // Update visual feedback
+            document.querySelectorAll('.answer-option').forEach(option => {
+                option.classList.remove('border-primary-500', 'bg-primary-50');
+                option.classList.add('border-border');
+            });
+            
+            const selectedOption = document.querySelector(`input[value="${value}"]`).closest('.answer-option');
+            selectedOption.classList.add('border-primary-500', 'bg-primary-50');
+            selectedOption.classList.remove('border-border');
+            
+            // Enable next button
+            document.getElementById('nextBtn').disabled = false;
+            document.getElementById('nextBtn').classList.remove('opacity-50', 'cursor-not-allowed');
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < totalQuestions) {
+                currentQuestion++;
+                updateProgress();
+                loadQuestion();
+            } else {
+                showCompletionModal();
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestion > 1) {
+                currentQuestion--;
+                updateProgress();
+                loadQuestion();
+            }
+        }
+
+        function loadQuestion() {
+            // Update question number
+            document.getElementById('questionNumber').textContent = currentQuestion;
+            
+            // Update navigation buttons
+            document.getElementById('prevBtn').style.display = currentQuestion === 1 ? 'none' : 'flex';
+            
+            // Update question navigation grid
+            updateQuestionNavigation();
+        }
+
+        function updateQuestionNavigation() {
+            const buttons = document.querySelectorAll('.grid button');
+            buttons.forEach((btn, index) => {
+                const questionNum = index + 1;
+                btn.classList.remove('bg-success', 'bg-secondary', 'bg-border', 'text-white', 'text-text-secondary');
+                
+                if (answers[questionNum]) {
+                    btn.classList.add('bg-success', 'text-white');
+                } else if (questionNum === currentQuestion) {
+                    btn.classList.add('bg-secondary', 'text-white');
+                } else {
+                    btn.classList.add('bg-border', 'text-text-secondary');
+                }
+            });
+        }
+
+        function showCompletionModal() {
+            document.getElementById('completionModal').classList.remove('hidden');
+            document.getElementById('completionModal').classList.add('flex');
+        }
+
+        function skipQuestion() {
+            nextQuestion();
+        }
+
+        // Event listeners
+        document.getElementById('nextBtn').addEventListener('click', nextQuestion);
+        document.getElementById('prevBtn').addEventListener('click', previousQuestion);
+        document.getElementById('skipBtn').addEventListener('click', skipQuestion);
+
+        // Answer selection
+        document.querySelectorAll('input[name="answer"]').forEach(input => {
+            input.addEventListener('change', (e) => {
+                selectAnswer(e.target.value);
+            });
+        });
+
+        // Question navigation
+        document.querySelectorAll('.grid button').forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+                currentQuestion = index + 1;
+                updateProgress();
+                loadQuestion();
+            });
+        });
+
+        // Auto-save functionality
+        setInterval(() => {
+            localStorage.setItem('quizProgress', JSON.stringify({
+                currentQuestion,
+                answers,
+                timestamp: new Date().toISOString()
+            }));
+        }, 30000); // Save every 30 seconds
+
+        // Load saved progress
+        const savedProgress = localStorage.getItem('quizProgress');
+        if (savedProgress) {
+            const data = JSON.parse(savedProgress);
+            currentQuestion = data.currentQuestion;
+            answers = data.answers;
+        }
+
+        // Initialize
+        updateProgress();
+        loadQuestion();
+
+        // Touch/swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.getElementById('questionCard').addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.getElementById('questionCard').addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0 && currentQuestion < totalQuestions) {
+                    // Swipe left - next question
+                    nextQuestion();
+                } else if (diff < 0 && currentQuestion > 1) {
+                    // Swipe right - previous question
+                    previousQuestion();
+                }
+            }
+        }
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
