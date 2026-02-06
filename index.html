@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nayi Raah - Your Career Guidance Platform</title>
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="main.css" />
     <style>
       body {
         margin: 0;
@@ -91,7 +91,7 @@
       <div class="subtitle">Your Career Guidance Platform</div>
       <div class="loading-spinner"></div>
       <div class="redirect-message">Redirecting to Student Login...</div>
-      <a href="pages/student_login.html" class="manual-link"
+      <a href="student_login.html" class="manual-link"
         >Click here if not redirected automatically</a
       >
     </div>
@@ -99,15 +99,14 @@
     <script>
       // Redirect to student login page after 3 seconds
       setTimeout(function () {
-        window.location.href = "pages/student_login.html";
+        window.location.href = "student_login.html";
       }, 3000);
 
       // Immediate redirect option
       document.addEventListener("DOMContentLoaded", function () {
         // You can uncomment the line below for immediate redirect
-        // window.location.href = 'pages/student_login.html';
+        // window.location.href = 'student_login.html';
       });
     </script>
-    <script id="dhws-dataInjector" src="/public/dhws-data-injector.js"></script>
   </body>
 </html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration - Nayi Raah</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="tailwind.css" />
+    <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fnayiraah8247back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background min-h-screen">
+    <!-- Header Navigation -->
+    <header class="bg-surface shadow-custom border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <svg class="h-8 w-8 text-primary mr-3" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                    <h1 class="text-xl font-heading font-semibold text-primary">Nayi Raah</h1>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="student_login.html" class="text-text-secondary hover:text-primary transition-custom">Login</a>
+                    <a href="student_dashboard.html" class="text-text-secondary hover:text-primary transition-custom">Dashboard</a>
+                    <a href="aptitude_assessment_quiz.html" class="text-text-secondary hover:text-primary transition-custom">Assessment</a>
+                    <a href="career_roadmap_generator.html" class="text-text-secondary hover:text-primary transition-custom">Roadmap</a>
+                    <a href="ai_guidance_chat.html" class="text-text-secondary hover:text-primary transition-custom">AI Guidance</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 rounded-md text-text-secondary hover:text-primary hover:bg-primary-50 transition-custom">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+
+                <!-- Registration Form Section -->
+                <div class="order-2 lg:order-1">
+                    <div class="card p-8">
+                        <!-- Form Header -->
+                        <div class="text-center mb-8">
+                            <h2 class="text-3xl font-heading font-bold text-text-primary mb-2">Create Account</h2>
+                            <p class="text-text-secondary">Join us to start your educational journey</p>
+                        </div>
+
+                        <!-- Registration Form -->
+                        <form id="registrationForm" class="space-y-6">
+                            <!-- Full Name Field -->
+                            <div>
+                                <label for="fullname" class="block text-sm font-medium text-text-primary mb-2">Full Name *</label>
+                                <input type="text" id="fullname" name="fullname" class="input-field" placeholder="John Doe" required />
+                                <div class="text-error-500 text-sm mt-1 hidden" id="fullnameError">Please enter your full name</div>
+                            </div>
+
+                            <!-- Email Field -->
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-text-primary mb-2">Email Address *</label>
+                                <input type="email" id="email" name="email" class="input-field" placeholder="student@example.com" required />
+                                <div class="text-error-500 text-sm mt-1 hidden" id="emailError">Please enter a valid email address</div>
+                            </div>
+
+                            <!-- Password Field -->
+                            <div>
+                                <label for="password" class="block text-sm font-medium text-text-primary mb-2">Password *</label>
+                                <div class="relative">
+                                    <input type="password" id="password" name="password" class="input-field pr-12" placeholder="Create a password" required />
+                                    <button type="button" id="togglePassword" class="absolute inset-y-0 right-0 pr-3 flex items-center text-text-secondary hover:text-primary transition-custom">
+                                        <svg id="eyeIcon" class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                        </svg>
+                                        <svg id="eyeOffIcon" class="h-5 w-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="text-error-500 text-sm mt-1 hidden" id="passwordError">Password must be at least 6 characters</div>
+                            </div>
+
+                            <!-- Confirm Password Field -->
+                            <div>
+                                <label for="confirmPassword" class="block text-sm font-medium text-text-primary mb-2">Confirm Password *</label>
+                                <input type="password" id="confirmPassword" name="confirmPassword" class="input-field" placeholder="Confirm your password" required />
+                                <div class="text-error-500 text-sm mt-1 hidden" id="confirmPasswordError">Passwords do not match</div>
+                            </div>
+
+                            <!-- Terms & Conditions -->
+                            <div class="flex items-center">
+                                <input type="checkbox" id="terms" name="terms" class="rounded border-border text-primary focus:ring-primary" required />
+                                <span class="ml-2 text-sm text-text-secondary">I agree to the <a href="#" class="text-primary hover:underline">Terms of Service</a> and <a href="#" class="text-primary hover:underline">Privacy Policy</a></span>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn-primary w-full py-3 text-base font-medium" id="registerBtn">
+                                <span id="registerText">Create Account</span>
+                                <svg id="loadingIcon" class="animate-spin -ml-1 mr-3 h-5 w-5 text-white hidden" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
+                                </svg>
+                            </button>
+                        </form>
+
+                        <!-- Login Link -->
+                        <div class="text-center mt-6 pt-6 border-t border-border">
+                            <p class="text-text-secondary">
+                                Already have an account?
+                                <a href="student_login.html" class="text-primary hover:underline font-medium">Sign in here</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Platform Highlights Section (Similar to Login) -->
+                <div class="order-1 lg:order-2">
+                    <div class="sticky top-8">
+                        <!-- Hero Image -->
+                        <div class="relative mb-8 rounded-2xl overflow-hidden">
+                            <img src="https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Students studying together" class="w-full h-64 object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-primary-900/80 to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 text-white">
+                                <h3 class="text-2xl font-heading font-bold mb-2">Start Your Journey Today</h3>
+                                <p class="text-primary-100">Unlock your potential with expert guidance</p>
+                            </div>
+                        </div>
+
+                        <!-- Features List -->
+                        <div class="card p-6">
+                            <h4 class="font-heading font-semibold text-text-primary mb-4">Why Join Nayi Raah?</h4>
+                            <div class="space-y-4">
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-8 h-8 bg-success-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-4 h-4 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-text-primary">Personalized Career Roadmap</p>
+                                        <p class="text-sm text-text-secondary">Get a tailored plan based on your interests and skills.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-text-primary">Government College Access</p>
+                                        <p class="text-sm text-text-secondary">Direct information about colleges in J&K.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-8 h-8 bg-secondary-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-text-primary">AI-Powered Guidance</p>
+                                        <p class="text-sm text-text-secondary">24/7 assistance for all your career queries.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface border-t border-border mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center text-text-secondary">
+                <p>&copy; 2025 Nayi Raah. All Rights Reserved. Empowering students across Jammu & Kashmir.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Registration Form -->
+    <script>
+        // Password toggle functionality
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordField = document.getElementById('password');
+        const eyeIcon = document.getElementById('eyeIcon');
+        const eyeOffIcon = document.getElementById('eyeOffIcon');
+
+        togglePassword.addEventListener('click', function() {
+            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordField.setAttribute('type', type);
+
+            eyeIcon.classList.toggle('hidden');
+            eyeOffIcon.classList.toggle('hidden');
+        });
+
+        // Form validation and submission
+        const registrationForm = document.getElementById('registrationForm');
+        const fullnameField = document.getElementById('fullname');
+        const emailField = document.getElementById('email');
+        const passwordFieldReg = document.getElementById('password'); // Rename to avoid conflict
+        const confirmPasswordField = document.getElementById('confirmPassword');
+        const registerBtn = document.getElementById('registerBtn');
+        const registerText = document.getElementById('registerText');
+        const loadingIcon = document.getElementById('loadingIcon');
+
+        function showError(fieldId, message) {
+            const errorElement = document.getElementById(fieldId + 'Error');
+            const field = document.getElementById(fieldId);
+
+            if (errorElement) {
+                errorElement.textContent = message;
+                errorElement.classList.remove('hidden');
+            }
+            field.classList.add('border-error-500');
+        }
+
+        function hideError(fieldId) {
+            const errorElement = document.getElementById(fieldId + 'Error');
+            const field = document.getElementById(fieldId);
+
+            if (errorElement) {
+                errorElement.classList.add('hidden');
+            }
+            field.classList.remove('border-error-500');
+        }
+
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function showLoading() {
+            registerText.textContent = 'Creating Account...';
+            loadingIcon.classList.remove('hidden');
+            registerBtn.disabled = true;
+        }
+
+        function hideLoading() {
+            registerText.textContent = 'Create Account';
+            loadingIcon.classList.add('hidden');
+            registerBtn.disabled = false;
+        }
+
+        // Real-time validation
+        fullnameField.addEventListener('blur', function() {
+            if (!this.value.trim()) {
+                showError('fullname', 'Full name is required');
+            } else {
+                hideError('fullname');
+            }
+        });
+
+        emailField.addEventListener('blur', function() {
+            const email = this.value.trim();
+            if (!email) {
+                showError('email', 'Email is required');
+            } else if (!validateEmail(email)) {
+                showError('email', 'Please enter a valid email address');
+            } else {
+                hideError('email');
+            }
+        });
+
+        passwordFieldReg.addEventListener('blur', function() {
+            if (!this.value.trim() || this.value.length < 6) {
+                showError('password', 'Password must be at least 6 characters');
+            } else {
+                hideError('password');
+            }
+        });
+
+        confirmPasswordField.addEventListener('blur', function() {
+            if (this.value !== passwordFieldReg.value) {
+                showError('confirmPassword', 'Passwords do not match');
+            } else {
+                hideError('confirmPassword');
+            }
+        });
+
+        // Form submission
+        registrationForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            let isValid = true;
+
+            // Reset errors
+            hideError('fullname');
+            hideError('email');
+            hideError('password');
+            hideError('confirmPassword');
+
+            // Validate fields
+            if (!fullnameField.value.trim()) {
+                showError('fullname', 'Full name is required');
+                isValid = false;
+            }
+
+            const email = emailField.value.trim();
+            if (!email) {
+                showError('email', 'Email is required');
+                isValid = false;
+            } else if (!validateEmail(email)) {
+                showError('email', 'Please enter a valid email address');
+                isValid = false;
+            }
+
+            const password = passwordFieldReg.value.trim();
+            if (!password || password.length < 6) {
+                showError('password', 'Password must be at least 6 characters');
+                isValid = false;
+            }
+
+            if (confirmPasswordField.value !== password) {
+                showError('confirmPassword', 'Passwords do not match');
+                isValid = false;
+            }
+
+            if (!isValid) return;
+
+            // Show loading state
+            showLoading();
+
+            // Simulate API call
+            setTimeout(() => {
+                // Successful registration
+                localStorage.setItem('userEmail', email);
+                localStorage.setItem('isLoggedIn', 'true');
+                window.location.href = 'student_dashboard.html';
+            }, 1500);
+        });
+
+        // Clear errors on input
+        fullnameField.addEventListener('input', function() { if(this.classList.contains('border-error-500')) hideError('fullname'); });
+        emailField.addEventListener('input', function() { if(this.classList.contains('border-error-500')) hideError('email'); });
+        passwordFieldReg.addEventListener('input', function() { if(this.classList.contains('border-error-500')) hideError('password'); });
+        confirmPasswordField.addEventListener('input', function() { if(this.classList.contains('border-error-500')) hideError('confirmPassword'); });
+    </script>
+</body>
+</html>
